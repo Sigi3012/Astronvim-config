@@ -5,7 +5,28 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
+
+  -- Language packs
   { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.toml" },
+  { import = "astrocommunity.pack.docker" },
+  { import = "astrocommunity.pack.yaml" },
+  { import = "astrocommunity.pack.python" },
+  { import = "astrocommunity.pack.html-css" },
+
+  -- Misc --
   { import = "astrocommunity.code-runner.compiler-nvim" },
-  -- import/override with your plugins folder
+
+  -- Colour --
+  { import = "astrocommunity.color.modes-nvim" },
+
+  -- Media --
+  { import = "astrocommunity.media.cord-nvim" },
+
+  -- Diagnostics
+  { import = "astrocommunity.diagnostics.lsp_lines-nvim" },
+  { import = "astrocommunity.diagnostics.trouble-nvim" },
+
+  -- Register
+  { import = "astrocommunity.register.nvim-neoclip-lua" },
 }
