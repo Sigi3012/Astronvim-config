@@ -12,7 +12,6 @@ return {
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.python" },
-  { import = "astrocommunity.pack.html-css" },
 
   -- Misc --
   { import = "astrocommunity.code-runner.compiler-nvim" },

@@ -1,8 +1,42 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+---@type LazySpec
+return {
+  {
+    "Saecki/crates.nvim",
+    lazy = true,
+    dependencies = {
+      "AstroNvim/astrocore",
+      opts = {
+        autocmds = {
+          CmpSourceCargo = {
+            {
+              event = "BufRead",
+              desc = "Load crates.nvim into Cargo buffers",
+              pattern = "Cargo.toml",
+              callback = function()
+                require("cmp").setup.buffer { sources = { { name = "crates" } } }
+                require "crates"
+              end,
+            },
+          },
+        },
+      },
+    },
+    opts = {
+      completion = {
+        cmp = { enabled = true },
+      },
+      null_ls = {
+        enabled = true,
+        name = "crates.nvim",
+      },
+    },
+  },
+}
 
 -- You can also add or configure plugins by creating files in this `plugins/` folder
 -- Here are some examples:
 
+--[[
 ---@type LazySpec
 return {
 
@@ -83,3 +117,4 @@ return {
     end,
   },
 }
+--]]

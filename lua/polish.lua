@@ -25,3 +25,17 @@ vim.opt.shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait"
 vim.opt.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
 vim.opt.shellquote = ""
 vim.opt.shellxquote = ""
+
+-- Crates.nvim keymaps
+local crates = require "crates"
+local opts = { silent = true }
+
+vim.keymap.set("n", "<leader>lcv", crates.show_versions_popup, opts)
+vim.keymap.set("n", "<leader>lcf", crates.show_features_popup, opts)
+
+vim.keymap.set("n", "<leader>lcu", crates.update_crate, opts)
+vim.keymap.set("n", "<leader>lca", crates.update_all_crates, opts)
+
+vim.keymap.set("n", "<leader>lch", crates.open_homepage, opts)
+vim.keymap.set("n", "<leader>lcd", crates.open_documentation, opts)
+vim.keymap.set("n", "<leader>lcc", crates.open_crates_io, opts)
